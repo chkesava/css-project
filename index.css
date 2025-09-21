@@ -1,0 +1,298 @@
+/* Reset and base styles */
+:root {
+  --clr-bg: #f7fafd;
+  --clr-sidebar: #284672;
+  --clr-sidebar-text: #f3f6fc;
+  --clr-primary: #3b82f6;
+  --clr-card: #ffffff;
+  --clr-profile: #e7f0fd;
+  --clr-shadow: rgba(60, 90, 130, 0.11);
+  --clr-badge-bg: #e9effa;
+  --clr-text-main: #263043;
+  --clr-text-secondary: #576581;
+  --clr-progress-bg: #e4efff;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  background: var(--clr-bg);
+  margin: 0;
+  color: var(--clr-text-main);
+}
+
+/* Layout structure */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 220px 1fr 320px;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 100vh;
+}
+@media (max-width: 1100px) {
+  .dashboard-container {
+    grid-template-columns: 170px 1fr;
+  }
+  .profile-card {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 0.5rem;
+  }
+  .sidebar {
+    display: none;
+  }
+  .profile-card {
+    display: none;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--clr-sidebar);
+  color: var(--clr-sidebar-text);
+  border-radius: 18px;
+  padding: 1.8rem 0.7rem;
+  height: 100%;
+  box-shadow: 0 4px 16px var(--clr-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sidebar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+.sidebar li {
+  margin: 0.6rem 0;
+}
+.sidebar a {
+  color: var(--clr-sidebar-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  transition: background 0.18s;
+}
+.sidebar a:hover {
+  background: rgba(243,246,252,0.12);
+}
+
+/* Main content area */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 2px solid var(--clr-primary);
+}
+.student-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--clr-primary);
+}
+.notif-btn {
+  background: none;
+  border: none;
+  color: var(--clr-primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.16s;
+}
+.notif-btn:hover {
+  background: #e7f0fd;
+}
+
+/* Overview Cards */
+.overview-cards {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 700px) {
+  .overview-cards {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+.card {
+  background: var(--clr-card);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--clr-shadow);
+  padding: 1.3rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.35rem;
+}
+.card-title {
+  color: var(--clr-text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--clr-primary);
+}
+
+/* Progress Table */
+.progress-table-section {
+  margin-bottom: 2.2rem;
+}
+.progress-table-section h2,
+.deadlines-section h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: var(--clr-text-main);
+}
+.progress-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--clr-card);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px var(--clr-shadow);
+}
+.progress-table th, .progress-table td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+}
+.progress-table th {
+  background: var(--clr-profile);
+  color: var(--clr-primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-bottom: 2px solid #e1e8f0;
+}
+.progress-table td {
+  border-bottom: 1px solid #f0f3fa;
+  font-size: 1rem;
+}
+.progress-bar {
+  background: var(--clr-progress-bg);
+  border-radius: 10px;
+  width: 120px;
+  height: 13px;
+  overflow: hidden;
+  margin-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.progress {
+  background: var(--clr-primary);
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s;
+}
+
+/* Upcoming Deadlines */
+.deadlines-section {
+  margin-bottom: 2rem;
+}
+.deadlines-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.deadlines-list li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.07rem;
+}
+.date-badge {
+  background: var(--clr-badge-bg);
+  color: var(--clr-primary);
+  border-radius: 12px;
+  padding: 0.32rem 0.92rem;
+  font-weight: 600;
+  font-size: 0.96rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+/* Student Profile Card */
+.profile-card {
+  background: var(--clr-profile);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px var(--clr-shadow);
+  padding: 2.5rem 1.7rem 2rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+  margin: 0 auto;
+  gap: 0.9rem;
+  text-align: center;
+}
+.profile-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--clr-primary);
+  margin-bottom: 0.5rem;
+}
+.profile-card h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 0;
+  color: var(--clr-primary);
+}
+.profile-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--clr-text-main);
+}
+.profile-card li {
+  margin-bottom: 0.42rem;
+  font-size: 1rem;
+}
+.profile-card strong {
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+}

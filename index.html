@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>EduBoard – Student Progress Dashboard</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" aria-label="Main Navigation">
+      <header>
+        <span class="logo">EduBoard</span>
+      </header>
+      <ul>
+        <li><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa-solid fa-book"></i> Subjects</a></li>
+        <li><a href="#"><i class="fa-solid fa-calendar-check"></i> Attendance</a></li>
+        <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
+        <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+      </ul>
+    </nav>
+
+    <div class="main-section">
+      <!-- Top Navbar / Header -->
+      <header class="header">
+        <div class="student-info">
+          <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Student Avatar" class="avatar" />
+          <span class="student-name">Kesava Ch</span>
+        </div>
+        <button class="notif-btn" aria-label="Notifications">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+      </header>
+
+      <main>
+        <!-- Overview Cards -->
+        <section class="overview-cards" aria-label="Overview Metrics">
+          <article class="card">
+            <span class="card-title">GPA</span>
+            <span class="card-value">8.7</span>
+          </article>
+          <article class="card">
+            <span class="card-title">Attendance</span>
+            <span class="card-value">92%</span>
+          </article>
+          <article class="card">
+            <span class="card-title">Assignments Due</span>
+            <span class="card-value">2</span>
+          </article>
+          <article class="card">
+            <span class="card-title">Total Credits</span>
+            <span class="card-value">156</span>
+          </article>
+        </section>
+
+        <!-- Progress Table -->
+        <section class="progress-table-section">
+          <h2>Subject Progress</h2>
+          <table class="progress-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Completion</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Web Development</td>
+                <td>
+                  <div class="progress-bar" aria-label="85% completed">
+                    <div class="progress" style="width:85%"></div>
+                  </div>
+                </td>
+                <td>85%</td>
+              </tr>
+              <tr>
+                <td>Data Structures</td>
+                <td>
+                  <div class="progress-bar" aria-label="74% completed">
+                    <div class="progress" style="width:74%"></div>
+                  </div>
+                </td>
+                <td>74%</td>
+              </tr>
+              <tr>
+                <td>Mathematics</td>
+                <td>
+                  <div class="progress-bar" aria-label="60% completed">
+                    <div class="progress" style="width:60%"></div>
+                  </div>
+                </td>
+                <td>60%</td>
+              </tr>
+              <tr>
+                <td>Database Systems</td>
+                <td>
+                  <div class="progress-bar" aria-label="95% completed">
+                    <div class="progress" style="width:95%"></div>
+                  </div>
+                </td>
+                <td>95%</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Upcoming Deadlines -->
+        <section class="deadlines-section">
+          <h2>Upcoming Deadlines</h2>
+          <ul class="deadlines-list">
+            <li>
+              <span class="date-badge">Sep 25</span>
+              Web Dev Project Submission
+            </li>
+            <li>
+              <span class="date-badge">Sep 28</span>
+              DSA Assignment 4
+            </li>
+            <li>
+              <span class="date-badge">Oct 04</span>
+              Database Quiz
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <!-- Student Profile -->
+    <aside class="profile-card" aria-labelledby="profile-title">
+      <h2 id="profile-title">Student Profile</h2>
+      <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Profile Avatar" />
+      <ul>
+        <li><strong>Name:</strong> Kesava Ch</li>
+        <li><strong>Roll No:</strong> 22BCE7951</li>
+        <li><strong>Email:</strong> chkesava54@gmail.com</li>
+        <li><strong>College:</strong> VIT-AP</li>
+        <li><strong>Department:</strong> Computer Science & Engg.</li>
+      </ul>
+    </aside>
+  </div>
+</body>
+</html>
